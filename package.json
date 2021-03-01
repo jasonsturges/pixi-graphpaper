@@ -1,23 +1,37 @@
 {
-  "name": "rollup-starter-lib",
-  "version": "1.0.0",
-  "main": "dist/how-long-till-lunch.cjs.js",
-  "module": "dist/how-long-till-lunch.esm.js",
-  "browser": "dist/how-long-till-lunch.umd.js",
+  "name": "pixi-graphpaper",
+  "version": "0.0.9",
+  "description": "Pixi.js graph paper rendering",
+  "author": "Jason Sturges <jason@jsonsturges.com> (https://jasonsturges.com)",
+  "homepage": "https://github.com/jasonsturges/pixi-graphpaper",
+  "license": "ISC",
+  "keywords": [
+    "pixi",
+    "grid",
+    "graph",
+    "paper",
+    "drawing"
+  ],
+  "scripts": {
+    "build": "rollup -c",
+    "dev": "rollup -c -w",
+    "test": "ts-node test/test.js",
+    "pretest": "npm run build"
+  },
   "dependencies": {
-    "ms": "^2.0.0"
+    "eslint": "^7.20.0",
+    "prettier": "^2.2.1",
+    "rollup-plugin-typescript": "^1.0.1",
+    "typescript": "^4.2.2"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
     "rollup": "^1.29.0"
   },
-  "scripts": {
-    "build": "rollup -c",
-    "dev": "rollup -c -w",
-    "test": "node test/test.js",
-    "pretest": "npm run build"
-  },
+  "main": "dist/pixi-graphpaper.cjs.js",
+  "module": "dist/pixi-graphpaper.esm.js",
+  "browser": "dist/pixi-graphpaper.umd.js",
   "files": [
     "dist"
   ]
