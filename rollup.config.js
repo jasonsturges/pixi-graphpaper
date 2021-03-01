@@ -29,7 +29,8 @@ export default [
 		input: 'src/main.ts',
 		plugins: [typescript()],
 		output: [
-			{ file: pkg.main, format: 'cjs' }
+			{ file: pkg.main, format: 'cjs' },
+      { file: pkg.module, format: "es" },
 		]
 	}
 ];
