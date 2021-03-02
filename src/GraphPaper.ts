@@ -335,7 +335,7 @@ export class GraphPaper extends PIXI.Sprite {
    * Apply graph options
    * @param {GraphOptions} options - Options to be applied
    */
-  public set(options: GraphOptions) {
+  public set(options: Partial<GraphOptions> = {}) {
     Object.assign(this, options);
     this._dirty = true;
   }
