@@ -1,7 +1,7 @@
 # Pixi Graph Paper
 Ruled graph paper, PIXI.Sprite instance able to be added to the display list via `addChild()`.
 
-![dark](https://user-images.githubusercontent.com/1213591/109616919-62ecd400-7afb-11eb-9e6f-0f2fc9efeba9.png)
+![pixi-graph-paper](https://user-images.githubusercontent.com/1213591/109711264-4a64d400-7b64-11eb-97bd-5472bd9f6453.gif)
 
 CodeSandbox Demo: https://xn2rm.csb.app/
 
