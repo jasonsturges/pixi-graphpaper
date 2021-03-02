@@ -1,7 +1,7 @@
 {
   "name": "pixi-graphpaper",
   "version": "1.0.0",
-  "description": "Pixi.js graph paper rendering",
+  "description": "Pixi.js ruled graph paper",
   "author": "Jason Sturges <jason@jsonsturges.com> (https://jasonsturges.com)",
   "homepage": "https://github.com/jasonsturges/pixi-graphpaper",
   "license": "ISC",
