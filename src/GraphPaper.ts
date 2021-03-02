@@ -474,6 +474,8 @@ export class GraphPaper extends PIXI.Sprite {
       _graphics,
     } = this;
 
+    if (!_minorGridVisible) return;
+
     _graphics.lineStyle(
       _minorStrokeWeight,
       _minorStrokeColor,
