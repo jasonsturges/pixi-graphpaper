@@ -62,6 +62,34 @@ paper.graphHeight = 2000;
 
 ```
 
+## Properties
+
+The following properties may be set on a `GraphPaper` instance:
+
+| Param | Type | Description |
+| --- | --- | --- |
+| number | `backgroundFillAlpha` | Opacity of the background fill |
+| number | `backgroundFillColor` | Color of the background |
+| boolean | `backgroundVisible` | Whether background is visible |
+| number | `graphHeight` | Width of the graph |
+| number | `graphWidth` | Height of the graph |
+| number | `intermediateGridSize` | Grid size of intermediate lines between major and minor rules. |
+| boolean | `intermediateGridVisible` | Whether intermediate grid rule is visible |
+| number | `intermediateStrokeAlpha` | Opacity of the intermediate rule stroke |
+| number | `intermediateStrokeColor` | Color of the intermediate rule stroke |
+| number | `intermediateStrokeWeight` | Weight of the intermediate rule stroke |
+| number | `majorGridSize` | Grid size of the major rule |
+| boolean | `majorGridVisible` | Whether major grid rule is visible |
+| number | `majorStrokeAlpha` | Opacity of the major rule stroke |
+| number | `majorStrokeColor` | Color of the major rule stroke |
+| number | `majorStrokeWeight` | Weight of the major rule stroke |
+| number | `minorGridSize` | Grid size of the minor rule |
+| boolean | `minorGridVisible` | Whether minor grid rule is visible |
+| number | `minorStrokeAlpha` | Opacity of the minor rule stroke |
+| number | `minorStrokeColor` | Color of the minor rule stroke |
+| number | `minorStrokeWeight` | Weight of the minor rule stroke |
+
+
 ## Graph Paper Styles
 
 Optionally, there are built-in styles via the `GraphPaperStyle` class.
