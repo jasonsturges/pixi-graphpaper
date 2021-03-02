@@ -12,6 +12,7 @@ export default [
 			file: pkg.browser,
 			format: 'umd'
 		},
+    external: ["pixi.js"],
 		plugins: [
 			resolve(), // so Rollup can find `ms`
 			commonjs(), // so Rollup can convert `ms` to an ES module
@@ -27,10 +28,11 @@ export default [
 	// `file` and `format` for each target)
 	{
 		input: 'src/main.ts',
-		plugins: [typescript()],
 		output: [
 			{ file: pkg.main, format: 'cjs' },
       { file: pkg.module, format: "es" },
-		]
+		],
+    external: ["pixi.js"],
+		plugins: [typescript()]
 	}
 ];
