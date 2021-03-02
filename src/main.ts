@@ -1,2 +1,2 @@
-export class GraphPaper {
-}
+export { GraphPaper } from "./GraphPaper";
+export { GraphPaperStyle } from "./GraphPaperStyle";
