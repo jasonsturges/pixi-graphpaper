@@ -1,6 +1,10 @@
 # Pixi Graph Paper
 Ruled graph paper, PIXI.Sprite instance able to be added to the display list via `addChild()`.
 
+![dark](https://user-images.githubusercontent.com/1213591/109616919-62ecd400-7afb-11eb-9e6f-0f2fc9efeba9.png)
+
+CodeSandbox Demo: https://xn2rm.csb.app/
+
 # Getting Started
 
 To install, execute:
@@ -61,6 +65,8 @@ paper.graphHeight = 2000;
 ## Graph Paper Styles
 
 Optionally, there are built-in styles via the `GraphPaperStyle` class.
+
+![blueprint](https://user-images.githubusercontent.com/1213591/109616946-6a13e200-7afb-11eb-8e24-6015f8adf8b0.png)
 
 Apply via the constructor:
 
