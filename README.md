@@ -73,7 +73,7 @@ The following properties may be set on a `GraphPaper` instance:
 | boolean | `backgroundVisible` | Whether background is visible |
 | number | `graphHeight` | Width of the graph |
 | number | `graphWidth` | Height of the graph |
-| number | `intermediateGridSize` | Grid size of intermediate lines between major and minor rules. |
+| number | `intermediateGridSize` | Grid size of intermediate lines between major and minor rules |
 | boolean | `intermediateGridVisible` | Whether intermediate grid rule is visible |
 | number | `intermediateStrokeAlpha` | Opacity of the intermediate rule stroke |
 | number | `intermediateStrokeColor` | Color of the intermediate rule stroke |
