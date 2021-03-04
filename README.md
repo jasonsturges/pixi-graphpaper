@@ -66,7 +66,7 @@ paper.graphHeight = 2000;
 
 The following properties may be set on a `GraphPaper` instance:
 
-| Param | Type | Description |
+| Type | Param | Description |
 | --- | --- | --- |
 | number | `backgroundFillAlpha` | Opacity of the background fill |
 | number | `backgroundFillColor` | Color of the background |
