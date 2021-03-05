@@ -13,23 +13,25 @@
     "drawing"
   ],
   "scripts": {
-    "build": "rollup -c",
     "dev": "rollup -c -w",
-    "test": "ts-node test/test.js",
-    "pretest": "npm run build"
+    "clean": "rimraf dist",
+    "prebuild": "npm run clean",
+    "build": "rollup -c",
+    "prepublishOnly": "npm run build",
+    "publish": "npm publish --access public"
   },
   "dependencies": {
-    "eslint": "^7.20.0",
-    "pixi.js": "^5.3.8",
-    "prettier": "^2.2.1",
-    "rimraf": "^3.0.2",
-    "rollup-plugin-typescript": "^1.0.1",
-    "typescript": "^4.2.2"
+    "pixi.js": "^5.3.8"
   },
   "devDependencies": {
     "@rollup/plugin-commonjs": "^11.0.1",
     "@rollup/plugin-node-resolve": "^7.0.0",
-    "rollup": "^1.29.0"
+    "eslint": "^7.20.0",
+    "prettier": "^2.2.1",
+    "rimraf": "^3.0.2",
+    "rollup": "^1.29.0",
+    "rollup-plugin-typescript": "^1.0.1",
+    "typescript": "^4.2.2"
   },
   "main": "dist/pixi-graphpaper.cjs.js",
   "module": "dist/pixi-graphpaper.esm.js",
