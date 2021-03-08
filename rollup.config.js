@@ -1,6 +1,6 @@
 import resolve from "@rollup/plugin-node-resolve";
 import commonjs from "@rollup/plugin-commonjs";
-import typescript from "rollup-plugin-typescript";
+import typescript from "@rollup/plugin-typescript";
 import pkg from "./package.json";
 
 export default [
@@ -17,7 +17,7 @@ export default [
     plugins: [
       resolve(), // so Rollup can find `ms`
       commonjs(), // so Rollup can convert `ms` to an ES module
-      typescript(),
+      typescript({ tsconfig: "./tsconfig.json" }),
     ],
   },
 
@@ -34,6 +34,6 @@ export default [
       { file: pkg.module, format: "es" },
     ],
     external: ["pixi.js"],
-    plugins: [typescript()],
+    plugins: [typescript({ tsconfig: "./tsconfig.json" })],
   },
 ];
