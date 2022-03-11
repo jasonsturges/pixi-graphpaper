@@ -42,16 +42,6 @@ let paper = new GraphPaper({
 });
 ```
 
-Or, set options via the `set()` function:
-```js
-let paper = new GraphPaper();
-
-paper.set({
-  graphWidth: 4000,
-  graphHeight: 4000
-});
-```
-
 Or, set via properties:
 
 ```js
@@ -92,27 +82,18 @@ The following properties may be set on a `GraphPaper` instance:
 
 ## Graph Paper Styles
 
-Optionally, there are built-in styles via the `GraphPaperStyle` class.
+Optionally, there are built-in styles via the `GraphStyleType` class.
 
 ![blueprint](https://user-images.githubusercontent.com/1213591/109616946-6a13e200-7afb-11eb-8e24-6015f8adf8b0.png)
 
 Apply via the constructor:
 
 ```js
-import { GraphPaper, GraphPaperStyle } from "pixi-graphpaper";
+import { GraphPaper, GraphStyleType } from "pixi-graphpaper";
 
 let paper = new GraphPaper({
   graphWidth: 2000,
   graphHeight: 2000,
-  ...GraphPaperStyle.blueprint()
+  ...GraphStyleType.blueprint
 });
-```
-
-Or, via `set()` function:
-
-```js
-import { GraphPaper, GraphPaperStyle } from "pixi-graphpaper";
-
-let paper = new GraphPaper();
-paper.set(GraphPaperStyle.engineering());
 ```
