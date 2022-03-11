@@ -24,7 +24,11 @@ export const viewport = new Viewport({
   .drag()
   .pinch()
   .wheel()
-  .decelerate();
+  .decelerate()
+  .clampZoom({
+    minScale: 0.1,
+    maxScale: 10,
+  });
 
 app.stage.addChild(viewport);
 app.ticker.start();
