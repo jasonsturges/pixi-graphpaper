@@ -1,11 +1,15 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "lib": [
+      "dom",
+      "dom.iterable",
+      "esnext"
+    ],
+    "declaration": true,
+    "esModuleInterop": true,
     "module": "esnext",
     "moduleResolution": "Node",
-    "declaration": true,
-    "strict": true,
-    "esModuleInterop": true,
-    "outDir": "@types"
+    "target": "es6",
+    "strict": true
   }
 }
