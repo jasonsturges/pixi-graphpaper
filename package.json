@@ -21,7 +21,13 @@
   "scripts": {
     "dev": "rollup -c -w",
     "build": "rollup -c",
-    "clean": "rimraf dist"
+    "prebuild:types": "rimraf ./build",
+    "build:types": "tsc -p ./tsconfig.json --outDir build --declaration true && api-extractor run",
+    "predoc:typedoc": "rimraf ./docs",
+    "docs:typedoc": "typedoc src --out docs",
+    "clean": "rimraf ./build ./dist ./docs",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "pixi.js": "^5.3.8"
