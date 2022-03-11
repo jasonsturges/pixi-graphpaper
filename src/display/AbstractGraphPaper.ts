@@ -1,6 +1,6 @@
 import { GraphOptions } from "./GraphOptions";
-import { Graphics, Renderer, Sprite } from "pixi.js";
 import { GraphStyle } from "../constant/GraphStyle";
+import { Renderer, Sprite } from "pixi.js";
 
 /**
  * Ruled graph paper, PIXI.Sprite instance able to be
