@@ -1,6 +1,6 @@
 {
   "name": "pixi-graphpaper",
-  "version": "1.0.2",
+  "version": "2.0.0",
   "description": "Pixi.js ruled graph paper",
   "author": "Jason Sturges <jason@jsonsturges.com> (https://jasonsturges.com)",
   "homepage": "https://github.com/jasonsturges/pixi-graphpaper",
@@ -30,8 +30,7 @@
     "build-storybook": "build-storybook"
   },
   "dependencies": {
-    "pixi.js": "^6.2.2",
-    "pixi-viewport": "^4.34.4"
+    "pixi.js": "^6.2.2"
   },
   "devDependencies": {
     "@babel/core": "^7.17.5",
@@ -47,6 +46,7 @@
     "@types/offscreencanvas": "^2019.6.4",
     "babel-loader": "^8.2.3",
     "eslint": "^8.9.0",
+    "pixi-viewport": "^4.34.4",
     "prettier": "^2.5.1",
     "rimraf": "^3.0.2",
     "rollup": "^2.67.2",
