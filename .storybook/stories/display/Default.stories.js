@@ -1,13 +1,12 @@
 import { canvas, viewport } from "../Scene";
-import { GraphPaper } from "../../../src";
-import { parseColor } from "../../../src/utils/ColorUtils";
+import { GraphPaper, parseColor } from "../../../src";
 
 export default {
   title: "Graph Paper/Paper",
   argTypes: {
     width: { control: "number" },
     height: { control: "number" },
-    backgroundVisit: { control: "boolean" },
+    backgroundVisible: { control: "boolean" },
     backgroundFillColor: { control: "color" },
     backgroundFillAlpha: { control: "number" },
     majorGridSize: { control: "number" },
@@ -83,7 +82,7 @@ Default.args = {
   width: 500,
   height: 500,
   backgroundFillAlpha: 1,
-  backgroundFillColor: 0x0,
+  backgroundFillColor: "#000000",
   backgroundVisible: false,
   majorGridSize: 100,
   majorGridVisible: true,
