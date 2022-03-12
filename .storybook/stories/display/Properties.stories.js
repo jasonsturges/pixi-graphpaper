@@ -2,7 +2,7 @@ import { canvas, viewport } from "../Scene";
 import { GraphPaper, parseColor } from "../../../src";
 
 export default {
-  title: "Graph Paper/Paper",
+  title: "Graph Paper/Graph Paper",
   argTypes: {
     width: { control: "number" },
     height: { control: "number" },
@@ -30,7 +30,7 @@ export default {
 /**
  * Pixi logo story
  */
-export const Default = ({
+export const Properties = ({
   width,
   height,
   backgroundFillAlpha,
@@ -78,7 +78,7 @@ export const Default = ({
 
   return canvas;
 };
-Default.args = {
+Properties.args = {
   width: 500,
   height: 500,
   backgroundFillAlpha: 1,
