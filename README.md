@@ -92,8 +92,8 @@ Apply via the constructor:
 import { GraphPaper, GraphStyleType } from "pixi-graphpaper";
 
 let paper = new GraphPaper({
+  ...GraphStyleType.blueprint,
   graphWidth: 2000,
-  graphHeight: 2000,
-  ...GraphStyleType.blueprint
+  graphHeight: 2000
 });
 ```
