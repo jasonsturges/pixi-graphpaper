@@ -1,6 +1,6 @@
 import { GraphOptions } from "../display/GraphOptions";
-import { GraphStyleType } from "../enum/GraphStyleType";
 import { GraphStyle } from "../constant/GraphStyle";
+import { GraphStyleType } from "../enum/GraphStyleType";
 
 export class GraphStyleFactory {
   static from(type: GraphStyleType): GraphOptions {
@@ -11,6 +11,8 @@ export class GraphStyleFactory {
         return GraphStyle.dark;
       case GraphStyleType.ENGINEERING:
         return GraphStyle.engineering;
+      case GraphStyleType.LIGHT:
+        return GraphStyle.light;
       case GraphStyleType.QUAD:
         return GraphStyle.quad;
 
