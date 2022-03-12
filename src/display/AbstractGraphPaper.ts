@@ -1,33 +1,22 @@
+import { FillStyle, IFillStyleOptions, Renderer, Sprite } from "pixi.js";
 import { GraphOptions } from "./GraphOptions";
 import { GraphStyle } from "../constant/GraphStyle";
-import { Renderer, Sprite } from "pixi.js";
+import { IRule } from "../model/IRule";
+import { Rule } from "../model/Rule";
 
 /**
- * Ruled graph paper, PIXI.Sprite instance able to be
- * added to the display list via `addChild()`.
+ * Abstract Graph Paper - base class defining presentation model and
+ * invalidation lifecycle of graph paper.
  */
 export abstract class AbstractGraphPaper extends Sprite {
-  private _backgroundFillAlpha?: number | undefined;
-  private _backgroundFillColor?: number | undefined;
   private _backgroundVisible?: boolean | undefined;
   private _graphHeight?: number | undefined;
   private _graphWidth?: number | undefined;
-  private _intermediateGridSize?: number | undefined;
-  private _intermediateGridVisible?: boolean | undefined;
-  private _intermediateStrokeAlpha?: number | undefined;
-  private _intermediateStrokeColor?: number | undefined;
-  private _intermediateStrokeWeight?: number | undefined;
   private _invalidated?: boolean | undefined;
-  private _majorGridSize?: number | undefined;
-  private _majorGridVisible?: boolean | undefined;
-  private _majorStrokeAlpha?: number | undefined;
-  private _majorStrokeColor?: number | undefined;
-  private _majorStrokeWeight?: number | undefined;
-  private _minorGridSize?: number | undefined;
-  private _minorGridVisible?: boolean | undefined;
-  private _minorStrokeAlpha?: number | undefined;
-  private _minorStrokeColor?: number | undefined;
-  private _minorStrokeWeight?: number | undefined;
+  private readonly _backgroundFill?: Partial<IFillStyleOptions> | undefined;
+  private readonly _intermediateRule?: IRule | undefined;
+  private readonly _majorRule?: IRule | undefined;
+  private readonly _minorRule?: IRule | undefined;
 
   //------------------------------
   //  properties
@@ -37,12 +26,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Opacity of the background fill, if `backgroundVisible` is set to `true`.
    */
   public get backgroundFillAlpha() {
-    return this._backgroundFillAlpha;
+    return this._backgroundFill?.alpha;
   }
 
   public set backgroundFillAlpha(value) {
-    if (this._backgroundFillAlpha === value) return;
-    this._backgroundFillAlpha = value;
+    if (!this._backgroundFill || this._backgroundFill.alpha === value) return;
+    this._backgroundFill.alpha = value;
     this.invalidate();
   }
 
@@ -50,12 +39,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Color the background, if `backgroundVisible` is set to `true`.
    */
   public get backgroundFillColor() {
-    return this._backgroundFillColor;
+    return this._backgroundFill?.color;
   }
 
   public set backgroundFillColor(value) {
-    if (this._backgroundFillColor === value) return;
-    this._backgroundFillColor = value;
+    if (!this._backgroundFill || this._backgroundFill.color === value) return;
+    this._backgroundFill.color = value;
     this.invalidate();
   }
 
@@ -102,12 +91,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Grid size of intermediate lines between major and minor rules.
    */
   public get intermediateGridSize() {
-    return this._intermediateGridSize;
+    return this._intermediateRule?.size;
   }
 
   public set intermediateGridSize(value) {
-    if (this._intermediateGridSize === value) return;
-    this._intermediateGridSize = value;
+    if (!this._intermediateRule || this._intermediateRule.size === value) return;
+    this._intermediateRule.size = value;
     this.invalidate();
   }
 
@@ -115,12 +104,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Whether intermediate grid rule is visible.
    */
   public get intermediateGridVisible() {
-    return this._intermediateGridVisible;
+    return this._intermediateRule?.visible;
   }
 
   public set intermediateGridVisible(value) {
-    if (this._intermediateGridVisible === value) return;
-    this._intermediateGridVisible = value;
+    if (!this._intermediateRule || this._intermediateRule.visible === value) return;
+    this._intermediateRule.visible = value;
     this.invalidate();
   }
 
@@ -128,12 +117,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Opacity of intermediate rule stroke.
    */
   public get intermediateStrokeAlpha() {
-    return this._intermediateStrokeAlpha;
+    return this._intermediateRule?.alpha;
   }
 
   public set intermediateStrokeAlpha(value) {
-    if (this._intermediateStrokeAlpha === value) return;
-    this._intermediateStrokeAlpha = value;
+    if (!this._intermediateRule || this._intermediateRule.alpha === value) return;
+    this._intermediateRule.alpha = value;
     this.invalidate();
   }
 
@@ -141,12 +130,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Color of intermediate rule stroke.
    */
   public get intermediateStrokeColor() {
-    return this._intermediateStrokeColor;
+    return this._intermediateRule?.color;
   }
 
   public set intermediateStrokeColor(value) {
-    if (this._intermediateStrokeColor === value) return;
-    this._intermediateStrokeColor = value;
+    if (!this._intermediateRule || this._intermediateRule.color === value) return;
+    this._intermediateRule.color = value;
     this.invalidate();
   }
 
@@ -154,12 +143,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Weight of intermediate rule stroke.
    */
   public get intermediateStrokeWeight() {
-    return this._intermediateStrokeWeight;
+    return this._intermediateRule?.weight;
   }
 
   public set intermediateStrokeWeight(value) {
-    if (this._intermediateStrokeWeight === value) return;
-    this._intermediateStrokeWeight = value;
+    if (!this._intermediateRule || this._intermediateRule.weight === value) return;
+    this._intermediateRule.weight = value;
     this.invalidate();
   }
 
@@ -167,12 +156,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Grid size of major line rule.
    */
   public get majorGridSize() {
-    return this._majorGridSize;
+    return this._majorRule?.size;
   }
 
   public set majorGridSize(value) {
-    if (this._majorGridSize === value) return;
-    this._majorGridSize = value;
+    if (!this._majorRule || this._majorRule?.size === value) return;
+    this._majorRule.size = value;
     this.invalidate();
   }
 
@@ -180,12 +169,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Whether major grid rule is visible.
    */
   public get majorGridVisible() {
-    return this._majorGridVisible;
+    return this._majorRule?.visible;
   }
 
   public set majorGridVisible(value) {
-    if (this._majorGridVisible === value) return;
-    this._majorGridVisible = value;
+    if (!this._majorRule || this._majorRule?.visible === value) return;
+    this._majorRule.visible = value;
     this.invalidate();
   }
 
@@ -193,12 +182,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Opacity of major rule stroke.
    */
   public get majorStrokeAlpha() {
-    return this._majorStrokeAlpha;
+    return this._majorRule?.alpha;
   }
 
   public set majorStrokeAlpha(value) {
-    if (this._majorStrokeAlpha === value) return;
-    this._majorStrokeAlpha = value;
+    if (!this._majorRule || this._majorRule?.alpha === value) return;
+    this._majorRule.alpha = value;
     this.invalidate();
   }
 
@@ -206,12 +195,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Color of major rule stroke.
    */
   public get majorStrokeColor() {
-    return this._majorStrokeColor;
+    return this._majorRule?.color;
   }
 
   public set majorStrokeColor(value) {
-    if (this._majorStrokeColor === value) return;
-    this._majorStrokeColor = value;
+    if (!this._majorRule || this._majorRule?.color === value) return;
+    this._majorRule.color = value;
     this.invalidate();
   }
 
@@ -219,12 +208,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Weight of major rule stroke.
    */
   public get majorStrokeWeight() {
-    return this._majorStrokeWeight;
+    return this._majorRule?.weight;
   }
 
   public set majorStrokeWeight(value) {
-    if (this._majorStrokeWeight === value) return;
-    this._majorStrokeWeight = value;
+    if (!this._majorRule || this._majorRule?.weight === value) return;
+    this._majorRule.weight = value;
     this.invalidate();
   }
 
@@ -232,12 +221,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Grid size of minor line rule.
    */
   public get minorGridSize() {
-    return this._minorGridSize;
+    return this._minorRule?.size;
   }
 
   public set minorGridSize(value) {
-    if (this._minorGridSize === value) return;
-    this._minorGridSize = value;
+    if (!this._minorRule || this._minorRule?.size === value) return;
+    this._minorRule.size = value;
     this.invalidate();
   }
 
@@ -245,12 +234,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Whether minor grid rule is visible.
    */
   public get minorGridVisible() {
-    return this._minorGridVisible;
+    return this._minorRule?.visible;
   }
 
   public set minorGridVisible(value) {
-    if (this._minorGridVisible === value) return;
-    this._minorGridVisible = value;
+    if (!this._minorRule || this._minorRule?.visible === value) return;
+    this._minorRule.visible = value;
     this.invalidate();
   }
 
@@ -258,12 +247,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Opacity of minor rule stroke.
    */
   public get minorStrokeAlpha() {
-    return this._minorStrokeAlpha;
+    return this._minorRule?.alpha;
   }
 
   public set minorStrokeAlpha(value) {
-    if (this._minorStrokeAlpha === value) return;
-    this._minorStrokeAlpha = value;
+    if (!this._minorRule || this._minorRule?.alpha === value) return;
+    this._minorRule.alpha = value;
     this.invalidate();
   }
 
@@ -271,12 +260,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Color of minor rule stroke.
    */
   public get minorStrokeColor() {
-    return this._minorStrokeColor;
+    return this._minorRule?.color;
   }
 
   public set minorStrokeColor(value) {
-    if (this._minorStrokeColor === value) return;
-    this._minorStrokeColor = value;
+    if (!this._minorRule || this._minorRule?.color === value) return;
+    this._minorRule.color = value;
     this.invalidate();
   }
 
@@ -284,12 +273,12 @@ export abstract class AbstractGraphPaper extends Sprite {
    * Weight of minor rule stroke.
    */
   public get minorStrokeWeight() {
-    return this._minorStrokeWeight;
+    return this._minorRule?.weight;
   }
 
   public set minorStrokeWeight(value) {
-    if (this._minorStrokeWeight === value) return;
-    this._minorStrokeWeight = value;
+    if (!this._minorRule || this._minorRule?.weight === value) return;
+    this._minorRule.weight = value;
     this.invalidate();
   }
 
@@ -297,30 +286,40 @@ export abstract class AbstractGraphPaper extends Sprite {
   //  methods
   //------------------------------
 
-  constructor(options: Partial<GraphOptions> = GraphStyle.dark) {
+  protected constructor(options: Partial<GraphOptions> = GraphStyle.dark) {
     super();
 
-    this.backgroundFillAlpha = options.backgroundFillAlpha;
-    this.backgroundFillAlpha = options.backgroundFillAlpha;
-    this.backgroundFillColor = options.backgroundFillColor;
-    this.backgroundVisible = options.backgroundVisible;
-    this.graphHeight = options.graphHeight;
-    this.graphWidth = options.graphWidth;
-    this.intermediateGridSize = options.intermediateGridSize;
-    this.intermediateGridVisible = options.intermediateGridVisible;
-    this.intermediateStrokeAlpha = options.intermediateStrokeAlpha;
-    this.intermediateStrokeColor = options.intermediateStrokeColor;
-    this.intermediateStrokeWeight = options.intermediateStrokeWeight;
-    this.majorGridSize = options.majorGridSize;
-    this.majorGridVisible = options.majorGridVisible;
-    this.majorStrokeAlpha = options.majorStrokeAlpha;
-    this.majorStrokeColor = options.majorStrokeColor;
-    this.majorStrokeWeight = options.majorStrokeWeight;
-    this.minorGridSize = options.minorGridSize;
-    this.minorGridVisible = options.minorGridVisible;
-    this.minorStrokeAlpha = options.minorStrokeAlpha;
-    this.minorStrokeColor = options.minorStrokeColor;
-    this.minorStrokeWeight = options.minorStrokeWeight;
+    this.graphHeight = options.graphHeight ?? 1000;
+    this.graphWidth = options.graphWidth ?? 1000;
+
+    this._backgroundFill = new FillStyle();
+    this._backgroundFill.alpha = options.backgroundFillAlpha;
+    this._backgroundFill.color = options.backgroundFillColor;
+    this._backgroundVisible = options.backgroundVisible;
+
+    this._intermediateRule = new Rule({
+      alpha: options.intermediateStrokeAlpha,
+      color: options.intermediateStrokeColor,
+      size: options.intermediateGridSize,
+      visible: options.intermediateGridVisible,
+      weight: options.intermediateStrokeWeight,
+    });
+
+    this._majorRule = new Rule({
+      alpha: options.majorStrokeAlpha,
+      color: options.majorStrokeColor,
+      size: options.majorGridSize,
+      visible: options.majorGridVisible,
+      weight: options.majorStrokeWeight,
+    });
+
+    this._minorRule = new Rule({
+      alpha: options.minorStrokeAlpha,
+      color: options.minorStrokeColor,
+      size: options.minorGridSize,
+      visible: options.minorGridVisible,
+      weight: options.minorStrokeWeight,
+    });
   }
 
   /**
