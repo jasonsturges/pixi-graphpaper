@@ -1,6 +1,5 @@
 import { FillStyle, IFillStyleOptions, Renderer, Sprite } from "pixi.js";
 import { GraphOptions } from "./GraphOptions";
-import { GraphStyle } from "../styles/GraphStyle";
 import { IRule } from "../model/IRule";
 import { Rule } from "../model/Rule";
 
@@ -286,39 +285,39 @@ export abstract class AbstractGraphPaper extends Sprite {
   //  methods
   //------------------------------
 
-  protected constructor(options: Partial<GraphOptions> = GraphStyle.dark) {
+  protected constructor(options?: Partial<GraphOptions>) {
     super();
 
-    this.graphHeight = options.graphHeight ?? 1000;
-    this.graphWidth = options.graphWidth ?? 1000;
+    this.graphHeight = options?.graphHeight ?? 1000;
+    this.graphWidth = options?.graphWidth ?? 1000;
 
     this._backgroundFill = new FillStyle();
-    this._backgroundFill.alpha = options.backgroundFillAlpha;
-    this._backgroundFill.color = options.backgroundFillColor;
-    this._backgroundVisible = options.backgroundVisible;
+    this._backgroundFill.alpha = options?.backgroundFillAlpha;
+    this._backgroundFill.color = options?.backgroundFillColor;
+    this._backgroundVisible = options?.backgroundVisible;
 
     this._intermediateRule = new Rule({
-      alpha: options.intermediateStrokeAlpha,
-      color: options.intermediateStrokeColor,
-      size: options.intermediateGridSize,
-      visible: options.intermediateGridVisible,
-      width: options.intermediateStrokeWidth,
+      alpha: options?.intermediateStrokeAlpha,
+      color: options?.intermediateStrokeColor,
+      size: options?.intermediateGridSize,
+      visible: options?.intermediateGridVisible,
+      width: options?.intermediateStrokeWidth,
     });
 
     this._majorRule = new Rule({
-      alpha: options.majorStrokeAlpha,
-      color: options.majorStrokeColor,
-      size: options.majorGridSize,
-      visible: options.majorGridVisible,
-      width: options.majorStrokeWidth,
+      alpha: options?.majorStrokeAlpha,
+      color: options?.majorStrokeColor,
+      size: options?.majorGridSize,
+      visible: options?.majorGridVisible,
+      width: options?.majorStrokeWidth,
     });
 
     this._minorRule = new Rule({
-      alpha: options.minorStrokeAlpha,
-      color: options.minorStrokeColor,
-      size: options.minorGridSize,
-      visible: options.minorGridVisible,
-      width: options.minorStrokeWidth,
+      alpha: options?.minorStrokeAlpha,
+      color: options?.minorStrokeColor,
+      size: options?.minorGridSize,
+      visible: options?.minorGridVisible,
+      width: options?.minorStrokeWidth,
     });
   }
 
