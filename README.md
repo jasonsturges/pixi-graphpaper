@@ -89,10 +89,10 @@ Optionally, there are built-in styles via the `GraphStyle` class.
 Apply via the constructor:
 
 ```js
-import { GraphPaper, GraphStyleType } from "pixi-graphpaper";
+import { GraphPaper, GraphStyle } from "pixi-graphpaper";
 
 let paper = new GraphPaper({
-  ...GraphStyle.blueprint,
+  ...GraphStyle.BLUEPRINT,
   graphWidth: 2000,
   graphHeight: 2000,
 });
