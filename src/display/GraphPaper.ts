@@ -4,8 +4,8 @@ import { GraphOptions } from "./GraphOptions";
 import { GraphStyle } from "../constant/GraphStyle";
 
 /**
- * Ruled graph paper, PIXI.Sprite instance able to be
- * added to the display list via `addChild()`.
+ * Ruled graph paper, PIXI Sprite instance added to the display list
+ * via `addChild()`.
  */
 export class GraphPaper extends AbstractGraphPaper {
   private readonly _graphics?: Graphics | undefined;
@@ -13,7 +13,7 @@ export class GraphPaper extends AbstractGraphPaper {
   /**
    * @constructor
    */
-  constructor(options: Partial<GraphOptions> = GraphStyle.dark) {
+  constructor(options?: Partial<GraphOptions>) {
     super({
       ...GraphStyle.dark,
       ...options,
@@ -65,7 +65,7 @@ export class GraphPaper extends AbstractGraphPaper {
       color: this.intermediateStrokeColor,
       alpha: this.intermediateStrokeAlpha,
       join: LINE_JOIN.MITER,
-      cap: LINE_CAP.BUTT,
+      cap: LINE_CAP.SQUARE,
     });
 
     for (let i = 0; i < this.graphHeight; i += this.intermediateGridSize) {
@@ -83,7 +83,6 @@ export class GraphPaper extends AbstractGraphPaper {
 
   /**
    * Render major grid rule.
-   * @private
    */
   protected renderMajorGrid() {
     if (
@@ -99,7 +98,7 @@ export class GraphPaper extends AbstractGraphPaper {
       color: this.majorStrokeColor,
       alpha: this.majorStrokeAlpha,
       join: LINE_JOIN.MITER,
-      cap: LINE_CAP.BUTT,
+      cap: LINE_CAP.SQUARE,
     });
 
     for (let i = 0; i <= this.graphHeight; i += this.majorGridSize) {
@@ -115,7 +114,6 @@ export class GraphPaper extends AbstractGraphPaper {
 
   /**
    * Render minor grid rule.
-   * @private
    */
   protected renderMinorGrid() {
     if (
@@ -131,7 +129,7 @@ export class GraphPaper extends AbstractGraphPaper {
       color: this.minorStrokeColor,
       alpha: this.minorStrokeAlpha,
       join: LINE_JOIN.MITER,
-      cap: LINE_CAP.BUTT,
+      cap: LINE_CAP.SQUARE,
     });
 
     for (let i = 0; i < this.graphHeight; i += this.minorGridSize) {
