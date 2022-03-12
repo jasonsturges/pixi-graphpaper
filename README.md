@@ -82,7 +82,7 @@ The following properties may be set on a `GraphPaper` instance:
 
 ## Graph Paper Styles
 
-Optionally, there are built-in styles via the `GraphStyleType` class.
+Optionally, there are built-in styles via the `GraphStyle` class.
 
 ![blueprint](https://user-images.githubusercontent.com/1213591/109616946-6a13e200-7afb-11eb-8e24-6015f8adf8b0.png)
 
@@ -92,7 +92,7 @@ Apply via the constructor:
 import { GraphPaper, GraphStyleType } from "pixi-graphpaper";
 
 let paper = new GraphPaper({
-  ...GraphStyleType.blueprint,
+  ...GraphStyle.blueprint,
   graphWidth: 2000,
   graphHeight: 2000
 });
