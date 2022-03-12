@@ -140,15 +140,15 @@ export abstract class AbstractGraphPaper extends Sprite {
   }
 
   /**
-   * Weight of intermediate rule stroke.
+   * Width of intermediate rule stroke.
    */
-  public get intermediateStrokeWeight() {
-    return this._intermediateRule?.weight;
+  public get intermediateStrokeWidth() {
+    return this._intermediateRule?.width;
   }
 
-  public set intermediateStrokeWeight(value) {
-    if (!this._intermediateRule || this._intermediateRule.weight === value) return;
-    this._intermediateRule.weight = value;
+  public set intermediateStrokeWidth(value) {
+    if (!this._intermediateRule || this._intermediateRule.width === value) return;
+    this._intermediateRule.width = value;
     this.invalidate();
   }
 
@@ -205,15 +205,15 @@ export abstract class AbstractGraphPaper extends Sprite {
   }
 
   /**
-   * Weight of major rule stroke.
+   * Width of major rule stroke.
    */
-  public get majorStrokeWeight() {
-    return this._majorRule?.weight;
+  public get majorStrokeWidth() {
+    return this._majorRule?.width;
   }
 
-  public set majorStrokeWeight(value) {
-    if (!this._majorRule || this._majorRule?.weight === value) return;
-    this._majorRule.weight = value;
+  public set majorStrokeWidth(value) {
+    if (!this._majorRule || this._majorRule?.width === value) return;
+    this._majorRule.width = value;
     this.invalidate();
   }
 
@@ -270,15 +270,15 @@ export abstract class AbstractGraphPaper extends Sprite {
   }
 
   /**
-   * Weight of minor rule stroke.
+   * Width of minor rule stroke.
    */
-  public get minorStrokeWeight() {
-    return this._minorRule?.weight;
+  public get minorStrokeWidth() {
+    return this._minorRule?.width;
   }
 
-  public set minorStrokeWeight(value) {
-    if (!this._minorRule || this._minorRule?.weight === value) return;
-    this._minorRule.weight = value;
+  public set minorStrokeWidth(value) {
+    if (!this._minorRule || this._minorRule?.width === value) return;
+    this._minorRule.width = value;
     this.invalidate();
   }
 
@@ -302,7 +302,7 @@ export abstract class AbstractGraphPaper extends Sprite {
       color: options.intermediateStrokeColor,
       size: options.intermediateGridSize,
       visible: options.intermediateGridVisible,
-      weight: options.intermediateStrokeWeight,
+      width: options.intermediateStrokeWidth,
     });
 
     this._majorRule = new Rule({
@@ -310,7 +310,7 @@ export abstract class AbstractGraphPaper extends Sprite {
       color: options.majorStrokeColor,
       size: options.majorGridSize,
       visible: options.majorGridVisible,
-      weight: options.majorStrokeWeight,
+      width: options.majorStrokeWidth,
     });
 
     this._minorRule = new Rule({
@@ -318,7 +318,7 @@ export abstract class AbstractGraphPaper extends Sprite {
       color: options.minorStrokeColor,
       size: options.minorGridSize,
       visible: options.minorGridVisible,
-      weight: options.minorStrokeWeight,
+      width: options.minorStrokeWidth,
     });
   }
 

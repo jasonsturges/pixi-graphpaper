@@ -13,12 +13,12 @@ export class GraphStyle {
     majorGridVisible: true,
     majorStrokeAlpha: 0.5,
     majorStrokeColor: 0xbfe0ec,
-    majorStrokeWeight: 2,
+    majorStrokeWidth: 2,
     minorGridSize: 10,
     minorGridVisible: true,
     minorStrokeAlpha: 0.1,
     minorStrokeColor: 0xbfe0ec,
-    minorStrokeWeight: 1,
+    minorStrokeWidth: 1,
   };
 
   /**
@@ -32,17 +32,17 @@ export class GraphStyle {
     intermediateGridVisible: true,
     intermediateStrokeAlpha: 1.0,
     intermediateStrokeColor: 0x313131,
-    intermediateStrokeWeight: 0.5,
+    intermediateStrokeWidth: 0.5,
     majorGridSize: 100,
     majorGridVisible: true,
     majorStrokeAlpha: 1.0,
     majorStrokeColor: 0x424242,
-    majorStrokeWeight: 1,
+    majorStrokeWidth: 1,
     minorGridSize: 10,
     minorGridVisible: true,
     minorStrokeAlpha: 1,
     minorStrokeColor: 0x2a2a2a,
-    minorStrokeWeight: 0.25,
+    minorStrokeWidth: 0.25,
   };
 
   /**
@@ -57,12 +57,12 @@ export class GraphStyle {
     majorGridVisible: true,
     majorStrokeAlpha: 0.5,
     majorStrokeColor: 0x40a040,
-    majorStrokeWeight: 2,
+    majorStrokeWidth: 2,
     minorGridSize: 10,
     minorGridVisible: true,
     minorStrokeAlpha: 0.1,
     minorStrokeColor: 0x60e080,
-    minorStrokeWeight: 1,
+    minorStrokeWidth: 1,
   };
 
   /**
@@ -78,12 +78,12 @@ export class GraphStyle {
     majorGridVisible: true,
     majorStrokeAlpha: 1.0,
     majorStrokeColor: 0x9a9a9a,
-    majorStrokeWeight: 0.5,
+    majorStrokeWidth: 0.5,
     minorGridSize: 10,
     minorGridVisible: true,
     minorStrokeAlpha: 1,
     minorStrokeColor: 0xacacac,
-    minorStrokeWeight: 0.25,
+    minorStrokeWidth: 0.25,
   };
 
   /**
@@ -98,11 +98,11 @@ export class GraphStyle {
     majorGridVisible: true,
     majorStrokeAlpha: 0.4,
     majorStrokeColor: 0x75a2a5,
-    majorStrokeWeight: 2,
+    majorStrokeWidth: 2,
     minorGridSize: 25,
     minorGridVisible: true,
     minorStrokeAlpha: 0.4,
     minorStrokeColor: 0xb3ced5,
-    minorStrokeWeight: 1,
+    minorStrokeWidth: 1,
   };
 }

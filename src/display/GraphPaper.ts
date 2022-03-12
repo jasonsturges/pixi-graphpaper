@@ -61,7 +61,7 @@ export class GraphPaper extends AbstractGraphPaper {
       return;
 
     this._graphics?.lineStyle(<ILineStyleOptions>{
-      width: this.intermediateStrokeWeight,
+      width: this.intermediateStrokeWidth,
       color: this.intermediateStrokeColor,
       alpha: this.intermediateStrokeAlpha,
       join: LINE_JOIN.MITER,
@@ -94,7 +94,7 @@ export class GraphPaper extends AbstractGraphPaper {
       return;
 
     this._graphics?.lineStyle(<ILineStyleOptions>{
-      width: this.majorStrokeWeight,
+      width: this.majorStrokeWidth,
       color: this.majorStrokeColor,
       alpha: this.majorStrokeAlpha,
       join: LINE_JOIN.MITER,
@@ -125,7 +125,7 @@ export class GraphPaper extends AbstractGraphPaper {
       return;
 
     this._graphics?.lineStyle(<ILineStyleOptions>{
-      width: this.minorStrokeWeight,
+      width: this.minorStrokeWidth,
       color: this.minorStrokeColor,
       alpha: this.minorStrokeAlpha,
       join: LINE_JOIN.MITER,

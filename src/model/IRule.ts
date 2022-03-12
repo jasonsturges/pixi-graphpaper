@@ -3,5 +3,5 @@ export interface IRule {
   color?: number | undefined;
   size?: number | undefined;
   visible?: boolean | undefined;
-  weight?: number | undefined;
+  width?: number | undefined;
 }

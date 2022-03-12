@@ -11,15 +11,15 @@ export type GraphOptions = {
   intermediateGridVisible?: boolean | undefined;
   intermediateStrokeAlpha?: number | undefined;
   intermediateStrokeColor?: number | undefined;
-  intermediateStrokeWeight?: number | undefined;
+  intermediateStrokeWidth?: number | undefined;
   majorGridSize?: number | undefined;
   majorGridVisible?: boolean | undefined;
   majorStrokeAlpha?: number | undefined;
   majorStrokeColor?: number | undefined;
-  majorStrokeWeight?: number | undefined;
+  majorStrokeWidth?: number | undefined;
   minorGridSize?: number | undefined;
   minorGridVisible?: boolean | undefined;
   minorStrokeAlpha?: number | undefined;
   minorStrokeColor?: number | undefined;
-  minorStrokeWeight?: number | undefined;
+  minorStrokeWidth?: number | undefined;
 };
