@@ -15,7 +15,7 @@ export class GraphPaper extends AbstractGraphPaper {
    */
   constructor(options?: Partial<GraphOptions>) {
     super({
-      ...GraphStyle.dark,
+      ...GraphStyle.DARK,
       ...options,
     });
 
