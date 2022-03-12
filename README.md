@@ -4,7 +4,9 @@ Ruled graph paper, PIXI.Sprite instance able to be added to the display list via
 
 ![pixi-graph-paper](https://user-images.githubusercontent.com/1213591/109711264-4a64d400-7b64-11eb-97bd-5472bd9f6453.gif)
 
-CodeSandbox Demo: https://xn2rm.csb.app/
+CodeSandbox Demo: https://codesandbox.io/s/pixi-graph-paper-xn2rm
+Storybook Demo: https://jasonsturges.github.io/pixi-graphpaper
+
 
 # Getting Started
 
@@ -17,6 +19,7 @@ Then, import into a project as:
 ```js
 import { GraphPaper } from "pixi-graphpaper";
 ```
+
 
 # Usage
 
@@ -53,6 +56,7 @@ paper.graphWidth = 2000;
 paper.graphHeight = 2000;
 ```
 
+
 ## Properties
 
 The following properties may be set on a `GraphPaper` instance:
@@ -79,6 +83,7 @@ The following properties may be set on a `GraphPaper` instance:
 | number  | `minorStrokeAlpha`        | Opacity of the minor rule stroke                              |
 | number  | `minorStrokeColor`        | Color of the minor rule stroke                                |
 | number  | `minorStrokeWidth`        | Width of the minor rule stroke                                |
+
 
 ## Graph Paper Styles
 
