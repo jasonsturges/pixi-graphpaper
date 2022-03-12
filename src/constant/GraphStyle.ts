@@ -32,12 +32,12 @@ export class GraphStyle {
     intermediateGridVisible: true,
     intermediateStrokeAlpha: 1.0,
     intermediateStrokeColor: 0x313131,
-    intermediateStrokeWeight: 1,
+    intermediateStrokeWeight: 0.5,
     majorGridSize: 100,
     majorGridVisible: true,
     majorStrokeAlpha: 1.0,
     majorStrokeColor: 0x424242,
-    majorStrokeWeight: 2,
+    majorStrokeWeight: 1,
     minorGridSize: 10,
     minorGridVisible: true,
     minorStrokeAlpha: 1,
@@ -63,6 +63,27 @@ export class GraphStyle {
     minorStrokeAlpha: 0.1,
     minorStrokeColor: 0x60e080,
     minorStrokeWeight: 1,
+  };
+
+  /**
+   * Light style graph paper
+   */
+  static light: Partial<GraphOptions> = {
+    backgroundFillAlpha: 1,
+    backgroundFillColor: 0xefefef,
+    backgroundVisible: true,
+    intermediateGridSize: 50,
+    intermediateGridVisible: false,
+    majorGridSize: 50,
+    majorGridVisible: true,
+    majorStrokeAlpha: 1.0,
+    majorStrokeColor: 0x9a9a9a,
+    majorStrokeWeight: 0.5,
+    minorGridSize: 10,
+    minorGridVisible: true,
+    minorStrokeAlpha: 1,
+    minorStrokeColor: 0xacacac,
+    minorStrokeWeight: 0.25,
   };
 
   /**
