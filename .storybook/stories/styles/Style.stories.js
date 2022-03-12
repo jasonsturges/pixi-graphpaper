@@ -2,14 +2,14 @@ import { canvas, viewport } from "../Scene";
 import { GraphPaper, GraphStyleFactory, GraphStyleType } from "../../../src";
 
 export default {
-  title: "Graph Paper/Style Factory",
+  title: "Graph Paper/Styles",
   argTypes: {
     width: { control: "number" },
     height: { control: "number" },
     type: {
+      options: GraphStyleType,
       control: {
         type: "radio",
-        options: GraphStyleType,
       },
     },
   },
@@ -48,6 +48,13 @@ Engineering.args = {
   width: 500,
   height: 500,
   type: GraphStyleType.ENGINEERING,
+};
+
+export const Light = Template.bind({});
+Light.args = {
+  width: 500,
+  height: 500,
+  type: GraphStyleType.LIGHT,
 };
 
 export const Quad = Template.bind({});
