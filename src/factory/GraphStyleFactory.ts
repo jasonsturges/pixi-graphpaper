@@ -1,5 +1,5 @@
 import { GraphOptions } from "../display/GraphOptions";
-import { GraphStyle } from "../constant/GraphStyle";
+import { GraphStyle } from "../styles/GraphStyle";
 import { GraphStyleType } from "../enum/GraphStyleType";
 
 export class GraphStyleFactory {

@@ -1,6 +1,6 @@
 import { FillStyle, IFillStyleOptions, Renderer, Sprite } from "pixi.js";
 import { GraphOptions } from "./GraphOptions";
-import { GraphStyle } from "../constant/GraphStyle";
+import { GraphStyle } from "../styles/GraphStyle";
 import { IRule } from "../model/IRule";
 import { Rule } from "../model/Rule";
 

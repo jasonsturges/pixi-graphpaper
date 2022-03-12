@@ -1,7 +1,7 @@
 import { AbstractGraphPaper } from "./AbstractGraphPaper";
 import { Graphics, ILineStyleOptions, LINE_CAP, LINE_JOIN } from "pixi.js";
 import { GraphOptions } from "./GraphOptions";
-import { GraphStyle } from "../constant/GraphStyle";
+import { GraphStyle } from "../styles/GraphStyle";
 
 /**
  * Ruled graph paper, PIXI Sprite instance added to the display list
