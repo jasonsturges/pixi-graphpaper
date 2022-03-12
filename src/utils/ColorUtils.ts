@@ -8,7 +8,7 @@
  */
 export function parseColor(value: number | string | undefined): number {
   // Undefined
-  if (!value) return 0x0;
+  if (!value) return 0xff00ff;
 
   // Integer with radix 10 or 16
   if (Number.isInteger(value)) return <number>value;
@@ -38,5 +38,5 @@ export function parseColor(value: number | string | undefined): number {
   }
 
   // Failover
-  return 0x0;
+  return 0xff00ff;
 }
