@@ -1,5 +1,5 @@
 /**
- * Optional parameters
+ * Optional graph paper parameters
  */
 export type GraphOptions = {
   backgroundFillAlpha?: number | undefined;
