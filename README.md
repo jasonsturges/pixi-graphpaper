@@ -4,8 +4,8 @@ Ruled graph paper, PIXI.Sprite instance able to be added to the display list via
 
 ![pixi-graph-paper](https://user-images.githubusercontent.com/1213591/109711264-4a64d400-7b64-11eb-97bd-5472bd9f6453.gif)
 
-CodeSandbox Demo: https://codesandbox.io/s/pixi-graph-paper-xn2rm
-Storybook Demo: https://jasonsturges.github.io/pixi-graphpaper
+- CodeSandbox Demo: https://codesandbox.io/s/pixi-graph-paper-xn2rm
+- Storybook Demo: https://jasonsturges.github.io/pixi-graphpaper
 
 
 # Getting Started
