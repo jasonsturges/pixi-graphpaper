@@ -1,4 +1,5 @@
 # Pixi Graph Paper
+
 Ruled graph paper, PIXI.Sprite instance able to be added to the display list via `addChild()`.
 
 ![pixi-graph-paper](https://user-images.githubusercontent.com/1213591/109711264-4a64d400-7b64-11eb-97bd-5472bd9f6453.gif)
@@ -20,6 +21,7 @@ import { GraphPaper } from "pixi-graphpaper";
 # Usage
 
 By default, a dark theme graph paper will be applied in a 1000 x 1000 pixel grid, with:
+
 - Major grid every 100-pixels
 - Intermediate grid every 50-pixels
 - Minor grid every 10-pixels
@@ -38,7 +40,7 @@ Options may be passed to the constructor:
 ```js
 let paper = new GraphPaper({
   graphWidth: 2000,
-  graphHeight: 2000
+  graphHeight: 2000,
 });
 ```
 
@@ -49,36 +51,34 @@ let paper = new GraphPaper();
 
 paper.graphWidth = 2000;
 paper.graphHeight = 2000;
-
 ```
 
 ## Properties
 
 The following properties may be set on a `GraphPaper` instance:
 
-| Type | Param | Description |
-| --- | --- | --- |
-| number | `backgroundFillAlpha` | Opacity of the background fill |
-| number | `backgroundFillColor` | Color of the background |
-| boolean | `backgroundVisible` | Whether background is visible |
-| number | `graphHeight` | Width of the graph |
-| number | `graphWidth` | Height of the graph |
-| number | `intermediateGridSize` | Grid size of intermediate lines between major and minor rules |
-| boolean | `intermediateGridVisible` | Whether intermediate grid rule is visible |
-| number | `intermediateStrokeAlpha` | Opacity of the intermediate rule stroke |
-| number | `intermediateStrokeColor` | Color of the intermediate rule stroke |
-| number | `intermediateStrokeWeight` | Weight of the intermediate rule stroke |
-| number | `majorGridSize` | Grid size of the major rule |
-| boolean | `majorGridVisible` | Whether major grid rule is visible |
-| number | `majorStrokeAlpha` | Opacity of the major rule stroke |
-| number | `majorStrokeColor` | Color of the major rule stroke |
-| number | `majorStrokeWeight` | Weight of the major rule stroke |
-| number | `minorGridSize` | Grid size of the minor rule |
-| boolean | `minorGridVisible` | Whether minor grid rule is visible |
-| number | `minorStrokeAlpha` | Opacity of the minor rule stroke |
-| number | `minorStrokeColor` | Color of the minor rule stroke |
-| number | `minorStrokeWeight` | Weight of the minor rule stroke |
-
+| Type    | Param                     | Description                                                   |
+|---------|---------------------------|---------------------------------------------------------------|
+| number  | `backgroundFillAlpha`     | Opacity of the background fill                                |
+| number  | `backgroundFillColor`     | Color of the background                                       |
+| boolean | `backgroundVisible`       | Whether background is visible                                 |
+| number  | `graphHeight`             | Width of the graph                                            |
+| number  | `graphWidth`              | Height of the graph                                           |
+| number  | `intermediateGridSize`    | Grid size of intermediate lines between major and minor rules |
+| boolean | `intermediateGridVisible` | Whether intermediate grid rule is visible                     |
+| number  | `intermediateStrokeAlpha` | Opacity of the intermediate rule stroke                       |
+| number  | `intermediateStrokeColor` | Color of the intermediate rule stroke                         |
+| number  | `intermediateStrokeWidth` | Width of the intermediate rule stroke                         |
+| number  | `majorGridSize`           | Grid size of the major rule                                   |
+| boolean | `majorGridVisible`        | Whether major grid rule is visible                            |
+| number  | `majorStrokeAlpha`        | Opacity of the major rule stroke                              |
+| number  | `majorStrokeColor`        | Color of the major rule stroke                                |
+| number  | `majorStrokeWidth`        | Width of the major rule stroke                                |
+| number  | `minorGridSize`           | Grid size of the minor rule                                   |
+| boolean | `minorGridVisible`        | Whether minor grid rule is visible                            |
+| number  | `minorStrokeAlpha`        | Opacity of the minor rule stroke                              |
+| number  | `minorStrokeColor`        | Color of the minor rule stroke                                |
+| number  | `minorStrokeWidth`        | Width of the minor rule stroke                                |
 
 ## Graph Paper Styles
 
@@ -94,6 +94,6 @@ import { GraphPaper, GraphStyleType } from "pixi-graphpaper";
 let paper = new GraphPaper({
   ...GraphStyle.blueprint,
   graphWidth: 2000,
-  graphHeight: 2000
+  graphHeight: 2000,
 });
 ```
