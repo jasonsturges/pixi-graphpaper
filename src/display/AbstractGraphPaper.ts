@@ -329,9 +329,9 @@ export abstract class AbstractGraphPaper extends Sprite {
   }
 
   /**
-   * Render override for invalidation pipeline
+   * Render override for invalidation pipeline.
    */
-  render(renderer: Renderer) {
+  override render(renderer: Renderer) {
     super.render(renderer);
 
     if (this._invalidated) {
