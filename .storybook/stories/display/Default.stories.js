@@ -3,7 +3,6 @@ import { GraphPaper } from "../../../src";
 
 export default {
   title: "Graph Paper/Graph Paper",
-  component: GraphPaper,
 };
 
 /**

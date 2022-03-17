@@ -4,8 +4,8 @@ import { GraphPaper, GraphStyleFactory, GraphStyleType } from "../../../src";
 export default {
   title: "Graph Paper/Styles",
   argTypes: {
-    width: { control: "number" },
-    height: { control: "number" },
+    height: { control: { type: "range", min: 0, max: 1000, step: 1 } },
+    width: { control: { type: "range", min: 0, max: 1000, step: 1 } },
     type: {
       options: GraphStyleType,
       control: {
