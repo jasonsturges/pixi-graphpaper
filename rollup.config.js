@@ -11,6 +11,7 @@ export default [
       name: "pixiGraphPaper",
       file: pkg.browser,
       format: "umd",
+      sourcemap: true,
       globals: { "pixi.js": "PIXI" },
     },
     external: ["pixi.js"],
@@ -25,8 +26,8 @@ export default [
   {
     input: "src/index.ts",
     output: [
-      { file: pkg.main, format: "cjs" },
-      { file: pkg.module, format: "es" },
+      { file: pkg.main, format: "cjs", sourcemap: true },
+      { file: pkg.module, format: "es", sourcemap: true },
     ],
     external: ["pixi.js"],
     plugins: [typescript({ tsconfig: "./tsconfig.json" })],
