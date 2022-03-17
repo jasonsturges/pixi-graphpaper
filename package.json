@@ -12,9 +12,10 @@
     "paper",
     "drawing"
   ],
-  "main": "dist/pixi-graphpaper.cjs.js",
-  "module": "dist/pixi-graphpaper.esm.js",
-  "browser": "dist/pixi-graphpaper.umd.js",
+  "main": "dist/cjs/pixi-graphpaper.js",
+  "module": "dist/esm/pixi-graphpaper.js",
+  "browser": "dist/browser/pixi-graphpaper.js",
+  "types": "dist/index.d.ts",
   "files": [
     "dist"
   ],
